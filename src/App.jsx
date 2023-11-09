@@ -1,15 +1,23 @@
 import { movies } from './movieDummy';
-import './App.css';
 import Movie from './components/Movie/Movie';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    background-color: #23254a;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 60px;
+    gap: 16px;
+`;
 
 function App() {
     return (
         <div className="App">
-            <div className="app-container">
+            <Container>
                 {movies.results.map((item) => (
                     <Movie movie={item} key={item.id} />
                 ))}
-            </div>
+            </Container>
         </div>
     );
 }

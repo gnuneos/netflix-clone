@@ -1,26 +1,36 @@
-import './Movie.css';
+import {
+    MovieContainer,
+    MovieInfo,
+    MovieInfoText,
+    MovieOverview,
+    OverviewContent,
+    OverviewText,
+    OverviewTitle,
+    Poster,
+    PosterImg,
+} from './styles';
 
 function Movie({ movie }) {
     console.log(movie);
     return (
-        <div className="movie">
-            <div className="movie-poster">
-                <img
+        <MovieContainer>
+            <Poster>
+                <PosterImg
                     src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`}
                     alt={movie.Title}
                 />
-            </div>
-            <div className="movie-info">
-                <div className="title">{movie.title}</div>
-                <div className="rating">{movie.vote_average}</div>
-            </div>
-            <div className="movie-overview">
-                <div className="overview-content">
-                    <div className="title">{movie.title}</div>
-                    <div className="overview">{movie.overview}</div>
-                </div>
-            </div>
-        </div>
+            </Poster>
+            <MovieInfo>
+                <MovieInfoText title>{movie.title}</MovieInfoText>
+                <MovieInfoText>{movie.vote_average}</MovieInfoText>
+            </MovieInfo>
+            <MovieOverview>
+                <OverviewContent>
+                    <OverviewTitle>{movie.title}</OverviewTitle>
+                    <OverviewText>{movie.overview}</OverviewText>
+                </OverviewContent>
+            </MovieOverview>
+        </MovieContainer>
     );
 }
 
