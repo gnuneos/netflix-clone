@@ -1,23 +1,20 @@
-import { movies } from './movieDummy';
-import Movie from './components/Movie/Movie';
-import styled from 'styled-components';
-
-const Container = styled.div`
-    background-color: #23254a;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px 60px;
-    gap: 16px;
-`;
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Home from './pages/Home';
+import Movies from './pages/Movies';
+import TV from './pages/TV';
+import Celebrity from './pages/Celebrity';
 
 function App() {
     return (
-        <div className="App">
-            <Container>
-                {movies.results.map((item) => (
-                    <Movie movie={item} key={item.id} />
-                ))}
-            </Container>
+        <div className="root-wrap">
+            <Header />
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/movies" element={<Movies />} />
+                <Route exact path="/tv" element={<TV />} />
+                <Route exact path="/celebrity" element={<Celebrity />} />
+            </Routes>
         </div>
     );
 }

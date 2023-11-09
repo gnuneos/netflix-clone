@@ -15,7 +15,7 @@ export const MovieOverview = styled.div`
 `;
 
 export const MovieContainer = styled.div`
-    width: calc(calc(100% - 112px) / 8);
+    width: calc(calc(100% - 112px) / 6);
     background-color: #373b69;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
